@@ -1,0 +1,22 @@
+﻿@model WebApplication6.Models.LoginUser
+
+@{
+//    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>title</title>
+</head>
+<body>
+<div>
+    <form asp-area="" asp-controller="Home" asp-action="Login" asp-antiforgery="true" class="">
+        <input type="text" asp-for="Id" />
+        <input type="text" asp-for="Password" />
+        <input type="submit" value="Login" />
+    </form>
+</div>
+</body>
+</html>
