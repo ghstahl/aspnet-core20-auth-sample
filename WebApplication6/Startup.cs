@@ -43,7 +43,7 @@ namespace WebApplication6
                 app.UseExceptionHandler("/Home/Error");
             }
 
-            app.UseAuthentication();
+            app.UseAuthentication(); // work
 
             app.UseStaticFiles();
 
@@ -53,6 +53,8 @@ namespace WebApplication6
                     name: "default",
                     template: "{controller=Home}/{action=Index}/{id?}");
             });
+
+            //app.UseAuthentication(); // NOT work
         }
     }
 }
