@@ -22,6 +22,12 @@ namespace WebApplication6
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc();
+
+            services.AddAuthentication("MyCookieAuthenticationScheme")
+                .AddCookie("MyCookieAuthenticationScheme", options => {
+                    options.AccessDeniedPath = "/Home/Forbidden/";
+                    options.LoginPath = "/Home/Login/";
+                });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -36,6 +42,8 @@ namespace WebApplication6
             {
                 app.UseExceptionHandler("/Home/Error");
             }
+
+            app.UseAuthentication();
 
             app.UseStaticFiles();
 
